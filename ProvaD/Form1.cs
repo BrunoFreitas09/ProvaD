@@ -71,7 +71,7 @@ namespace ProvaD
                     dgvLista.CurrentRow.Cells[1].Value = txtAlterarQtd.Text;
                     MessageBox.Show("Quantidade atualizada com sucesso!", "Atualizado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     //arrumar para fazer com que após o valor no grid ser atualizado atualize o valor da compra total tbm
-                    lblTotalVenda
+                    lblTotalVenda = new System.Windows.Forms.Label();
                 }
                 else
                 {
