@@ -32,9 +32,6 @@
             this.txtAlterarQtd = new System.Windows.Forms.TextBox();
             this.txtQtd = new System.Windows.Forms.TextBox();
             this.dgvLista = new System.Windows.Forms.DataGridView();
-            this.Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtUnitario = new System.Windows.Forms.TextBox();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
@@ -50,6 +47,10 @@
             this.lblTotalVenda = new System.Windows.Forms.Label();
             this.lblVendaNumero = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
+            this.Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,33 +83,15 @@
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Produto,
-            this.Quantidade,
-            this.valor});
+            this.quant,
+            this.valor,
+            this.Tota});
             this.dgvLista.Location = new System.Drawing.Point(157, 198);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLista.Size = new System.Drawing.Size(497, 135);
-            this.dgvLista.TabIndex = 3;
-            this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
-            // 
-            // Produto
-            // 
-            this.Produto.HeaderText = "Produto";
-            this.Produto.Name = "Produto";
-            this.Produto.ReadOnly = true;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
-            // 
-            // valor
-            // 
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
-            this.valor.ReadOnly = true;
+
             // 
             // txtUnitario
             // 
@@ -247,6 +230,31 @@
             this.lblID.TabIndex = 18;
             this.lblID.Text = "1";
             // 
+            // Produto
+            // 
+            this.Produto.HeaderText = "Produto";
+            this.Produto.Name = "Produto";
+            this.Produto.ReadOnly = true;
+            // 
+            // quant
+            // 
+            this.quant.HeaderText = "quant";
+            this.quant.Name = "quant";
+            this.quant.ReadOnly = true;
+            // 
+            // valor
+            // 
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            // 
+            // Tota
+            // 
+            this.Tota.HeaderText = "Tota";
+            this.Tota.Name = "Tota";
+            this.Tota.ReadOnly = true;
+            this.Tota.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,9 +293,6 @@
         private System.Windows.Forms.TextBox txtAlterarQtd;
         private System.Windows.Forms.TextBox txtQtd;
         private System.Windows.Forms.DataGridView dgvLista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Produto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.TextBox txtUnitario;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnRemover;
@@ -303,6 +308,10 @@
         private System.Windows.Forms.Label lblTotalVenda;
         private System.Windows.Forms.Label lblVendaNumero;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tota;
     }
 }
 
