@@ -6,10 +6,13 @@ namespace ProvaD
     public partial class Form1 : Form
     {
         double total = 0;
+        double id =  1;
+        
 
         public Form1()
         {
             InitializeComponent();
+            lblID.Text = id.ToString();
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -78,19 +81,24 @@ namespace ProvaD
             {
                 if (double.TryParse(txtAlterarQtd.Text, out double novaQuantidade) &&
                     double.TryParse(dgvLista.CurrentRow.Cells[2].Value?.ToString(), out double valorUnitario))
+
+
                 {
+                    //pegando a quantidade antiga do DataGridView
+                    double.TryParse(dgvLista.CurrentRow.Cells[1].Value?.ToString(), out double QtdAntiga);
+
                     // Atualizando a quantidade na célula
                     dgvLista.CurrentRow.Cells[1].Value = novaQuantidade;
 
                     // Recalcular o total
                     // Primeiro, removemos o valor antigo
-                    if (double.TryParse(dgvLista.CurrentRow.Cells[1].Value?.ToString(), out double quantidadeAntiga))
-                    {
-                        total -= quantidadeAntiga * valorUnitario;
-                    }
+                    //if (double.TryParse(dgvLista.CurrentRow.Cells[1].Value?.ToString(), out double quantidadeAntiga))
+                    //{
+                     //   total -= quantidadeAntiga * valorUnitario;
+                    //}
 
                     // Atualizamos o total com o novo valor
-                    total += novaQuantidade * valorUnitario;
+                    total += (novaQuantidade  - QtdAntiga)  * valorUnitario ;
                     lblTotalVenda.Text = total.ToString("F2"); // Exibindo o total formatado como número decimal
 
                     MessageBox.Show("Quantidade atualizada com sucesso!", "Atualizado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -109,6 +117,38 @@ namespace ProvaD
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+            id++;
+            lblID.Text = id.ToString();
+            total = 0 ;
+            lblTotalVenda.Text = total.ToString("F2"); 
+            // Limpando os campos após o click
+            txtProduto.Clear();
+            txtQtd.Clear();
+            txtUnitario.Clear();
+            txtAlterarQtd.Clear();
+            //limpando o DataGridView
+            dgvLista.Rows.Clear();
+            dgvLista.DataSource = null; //Remover a datasource
+            dgvLista.Rows.Clear();    //Remover as linhas
+            dgvLista.Refresh();    //Para a grid se actualizar
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            // Limpando os campos após o click
+            txtProduto.Clear();
+            txtQtd.Clear();
+            txtUnitario.Clear();
+            txtAlterarQtd.Clear();
+            //limpando o DataGridView
+            dgvLista.Rows.Clear();
+            dgvLista.DataSource = null; //Remover a datasource
+            dgvLista.Rows.Clear();    //Remover as linhas
+            dgvLista.Refresh();    //Para a grid se actualizar
         }
     }
 }

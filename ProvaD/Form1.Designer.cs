@@ -32,6 +32,10 @@
             this.txtAlterarQtd = new System.Windows.Forms.TextBox();
             this.txtQtd = new System.Windows.Forms.TextBox();
             this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtUnitario = new System.Windows.Forms.TextBox();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
@@ -47,10 +51,6 @@
             this.lblTotalVenda = new System.Windows.Forms.Label();
             this.lblVendaNumero = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,14 +66,14 @@
             this.txtAlterarQtd.Location = new System.Drawing.Point(249, 363);
             this.txtAlterarQtd.Name = "txtAlterarQtd";
             this.txtAlterarQtd.Size = new System.Drawing.Size(100, 20);
-            this.txtAlterarQtd.TabIndex = 1;
+            this.txtAlterarQtd.TabIndex = 3;
             // 
             // txtQtd
             // 
             this.txtQtd.Location = new System.Drawing.Point(135, 118);
             this.txtQtd.Name = "txtQtd";
             this.txtQtd.Size = new System.Drawing.Size(100, 20);
-            this.txtQtd.TabIndex = 2;
+            this.txtQtd.TabIndex = 1;
             // 
             // dgvLista
             // 
@@ -91,14 +91,39 @@
             this.dgvLista.ReadOnly = true;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLista.Size = new System.Drawing.Size(497, 135);
-
+            this.dgvLista.TabIndex = 19;
+            // 
+            // Produto
+            // 
+            this.Produto.HeaderText = "Produto";
+            this.Produto.Name = "Produto";
+            this.Produto.ReadOnly = true;
+            // 
+            // quant
+            // 
+            this.quant.HeaderText = "quant";
+            this.quant.Name = "quant";
+            this.quant.ReadOnly = true;
+            // 
+            // valor
+            // 
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            // 
+            // Tota
+            // 
+            this.Tota.HeaderText = "Tota";
+            this.Tota.Name = "Tota";
+            this.Tota.ReadOnly = true;
+            this.Tota.Visible = false;
             // 
             // txtUnitario
             // 
             this.txtUnitario.Location = new System.Drawing.Point(135, 163);
             this.txtUnitario.Name = "txtUnitario";
             this.txtUnitario.Size = new System.Drawing.Size(100, 20);
-            this.txtUnitario.TabIndex = 4;
+            this.txtUnitario.TabIndex = 2;
             // 
             // btnInserir
             // 
@@ -148,6 +173,7 @@
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar Venda";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGravar
             // 
@@ -157,6 +183,7 @@
             this.btnGravar.TabIndex = 10;
             this.btnGravar.Text = "Gravar venda";
             this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // lblProduto
             // 
@@ -229,31 +256,6 @@
             this.lblID.Size = new System.Drawing.Size(13, 13);
             this.lblID.TabIndex = 18;
             this.lblID.Text = "1";
-            // 
-            // Produto
-            // 
-            this.Produto.HeaderText = "Produto";
-            this.Produto.Name = "Produto";
-            this.Produto.ReadOnly = true;
-            // 
-            // quant
-            // 
-            this.quant.HeaderText = "quant";
-            this.quant.Name = "quant";
-            this.quant.ReadOnly = true;
-            // 
-            // valor
-            // 
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
-            this.valor.ReadOnly = true;
-            // 
-            // Tota
-            // 
-            this.Tota.HeaderText = "Tota";
-            this.Tota.Name = "Tota";
-            this.Tota.ReadOnly = true;
-            this.Tota.Visible = false;
             // 
             // Form1
             // 
